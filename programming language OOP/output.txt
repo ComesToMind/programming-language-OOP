@@ -1,0 +1,14 @@
+Filled container. 
+Container contains that elements:
+0: Incorrect type of language!!!
+1: Incorrect type of language!!!
+2:  It is Object - Oriented: inheritance = SINGLE,Год создания: 1970
+3:  It is Object - Oriented: inheritance = MULTIPLE,Год создания: 1973
+4:  It is Object - Oriented: inheritance = INTERFACE,Год создания: 1975
+5: Incorrect type of language!!!
+6: It is Procedural : abstrat data type = 1, Год создания: 2000
+7: It is Procedural : abstrat data type = 0, Год создания: 2001
+8:  It is Object - Oriented: inheritance = SINGLE,Год создания: 2002
+9:  It is Object - Oriented: inheritance = MULTIPLE,Год создания: 2003
+Empty container. 
+Container is empty!
