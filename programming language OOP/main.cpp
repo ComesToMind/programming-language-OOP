@@ -11,6 +11,7 @@ int main(int argc, char* argv[])
 		cout << "incorrect command line! "
 			"Waited: command in_file out_file"
 			<< endl;
+		system("pause");
 		exit(1);
 	}
 	ifstream ifst(argv[1]);

@@ -1,9 +1,11 @@
 #include "Language.h"
 #include "Procedural.h"
 #include "ObjectOriented.h"
+#include <string>
 Language* Language::In(ifstream &ifst)
 {
-	int k,error1,error2;
+	int k,error1,error2,error3;
+	char error[255];
 	Language * lg;
 	ifst >> k;
 	switch (k)
@@ -15,7 +17,14 @@ Language* Language::In(ifstream &ifst)
 		lg = new ObjectOriented();
 		break;
 	default:
-		ifst >> error1 >> error2;
+		char b;
+		ifst >> b;
+		//читатем до конца строки
+		while (!ifst.eof() && ifst.peek()!='\n')
+		{
+			ifst >> b;
+			//b=?
+		}
 		return NULL;
 	}
 	lg->InData(ifst);
@@ -25,10 +34,10 @@ Language* Language::In(ifstream &ifst)
 
 void Language::InCommon(ifstream &ifst)
 {
-	ifst >> mData;
+	ifst >> mData >> mRef;
 };
 void Language::OutCommon(ofstream &ofst)
 {
-	ofst << "Год создания: " << mData << endl;
+	ofst << " Develop year: " << mData << ", References:  " << mRef << endl;
 };
 
