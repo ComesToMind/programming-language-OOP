@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Container.cpp" />
+    <ClCompile Include="Functional.cpp" />
     <ClCompile Include="Language.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectOriented.cpp" />
@@ -123,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h" />
+    <ClInclude Include="Functional.h" />
     <ClInclude Include="Language.h" />
     <ClInclude Include="ObjectOriented.h" />
     <ClInclude Include="Procedural.h" />

@@ -1,6 +1,7 @@
 #include "Language.h"
 #include "Procedural.h"
 #include "ObjectOriented.h"
+#include "Functional.h"
 Language* Language::In(ifstream &ifst)
 {
 	int k,error1,error2;
@@ -14,7 +15,11 @@ Language* Language::In(ifstream &ifst)
 	case 2:
 		lg = new ObjectOriented();
 		break;
+	case 3: 
+		lg = new Functional();
+		break;
 	default:
+		//здесь не мешало бы считать строку до конца нормальной командой 
 		ifst >> error1 >> error2;
 		return NULL;
 	}
@@ -29,6 +34,6 @@ void Language::InCommon(ifstream &ifst)
 };
 void Language::OutCommon(ofstream &ofst)
 {
-	ofst << "Год создания: " << mData << endl;
+	ofst << " Develop year: " << mData << endl;
 };
 
