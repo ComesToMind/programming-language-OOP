@@ -64,6 +64,7 @@ void Container::Out(ofstream &ofst)
 			else
 			{
 				temp->L->Out(ofst);
+				temp->L->YearsPassed(ofst);
 			}
 			temp = temp->Next;
 			i++;

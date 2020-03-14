@@ -1,9 +1,12 @@
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include "Language.h"
 #include "Procedural.h"
 #include "ObjectOriented.h"
+#include <ctime>
+
 Language* Language::In(ifstream &ifst)
 {
-	int k,error1,error2;
+	int k;
 	Language * lg;
 	ifst >> k;
 	switch (k)
@@ -15,7 +18,14 @@ Language* Language::In(ifstream &ifst)
 		lg = new ObjectOriented();
 		break;
 	default:
-		ifst >> error1 >> error2;
+		char b;
+		ifst >> b;
+		//÷èòàòåì äî êîíöà ñòðîêè
+		while (!ifst.eof() && ifst.peek() != '\n')
+		{
+			ifst >> b;
+			//b=?
+		}
 		return NULL;
 	}
 	lg->InData(ifst);
@@ -29,6 +39,13 @@ void Language::InCommon(ifstream &ifst)
 };
 void Language::OutCommon(ofstream &ofst)
 {
-	ofst << "��� ��������: " << mData << endl;
+	ofst << "Год создания: " << mData << endl;
+};
+
+void Language::YearsPassed(ofstream &ofst)
+{
+	time_t seconds = time(NULL);
+	tm* timeinfo = localtime(&seconds);
+	ofst <<(timeinfo->tm_year+1900)-mData<<" years have been passed!!!"<<endl;
 };
 
