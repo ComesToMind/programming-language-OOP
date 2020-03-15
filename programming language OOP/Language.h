@@ -8,7 +8,7 @@ public:
 	static Language * In(ifstream &ifst);
 	virtual void InData(ifstream &ifst) = 0; // ввод
 	virtual void Out(ofstream &ofst) = 0;
-	void YearsPassed(ofstream &ofst);
+	int YearsPassed();
 	void InCommon(ifstream &ifst);
 	void OutCommon(ofstream &ofst);
 protected:

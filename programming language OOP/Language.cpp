@@ -42,10 +42,10 @@ void Language::OutCommon(ofstream &ofst)
 	ofst << "Год создания: " << mData << endl;
 };
 
-void Language::YearsPassed(ofstream &ofst)
+int Language::YearsPassed()
 {
 	time_t seconds = time(NULL);
 	tm* timeinfo = localtime(&seconds);
-	ofst <<(timeinfo->tm_year+1900)-mData<<" years have been passed!!!"<<endl;
+	return (timeinfo->tm_year+1900)-mData;
 };
 
