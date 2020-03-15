@@ -32,3 +32,7 @@ void Language::OutCommon(ofstream &ofst)
 	ofst << "Год создания: " << mData << endl;
 };
 
+void Language::OutProc(ofstream &ofst)
+{
+	ofst << endl; //empty line
+};

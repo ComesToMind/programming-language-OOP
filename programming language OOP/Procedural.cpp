@@ -24,3 +24,8 @@ void Procedural::Out(ofstream &ofst)
 		<< ", ";
 	OutCommon(ofst);
 };
+
+void Procedural::OutProc(ofstream &ofst)
+{
+	Out(ofst);
+};

@@ -74,6 +74,35 @@ void Container::Out(ofstream &ofst)
 		ofst << "Container is empty!" << endl;
 
 	}
+}
+void Container::OutProc(ofstream & ofst)
+{
+	if (this->Next != nullptr)
+	{
+		ofst << endl<< "Only Procedural languages:" << endl;
+		Container *temp;
+		temp = this;
+		int i = 0;
+		do
+		{
+			ofst << i << ": ";
+			if (temp->L == NULL)
+			{
+				ofst << "Incorrect type of language!!!" << endl;
+			}
+			else
+			{
+				temp->L->OutProc(ofst);
+			}
+			temp = temp->Next;
+			i++;
+		} while (temp != this);
+	}
+	else
+	{
+		ofst << "Container is empty!" << endl;
+
+	}
 }; // вывод
 
 void Container::Clear()
