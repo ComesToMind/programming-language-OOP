@@ -14,21 +14,16 @@ void Container::In(ifstream &ifst)
 		if ((this == this->Next) && (!ifst.tellg()))
 		{
 			this->L = Language::In(ifst);
-			//this->L->InCommon(ifst); смаркат
+			
 		}
 		else
 		{
-			//Container *p;
-			//p = c.Next; // ���������� ��������� �� ��������� �������
-			//c.Next = temp; // ���������� ���� ��������� �� �����������
-			//temp->L = In(ifst); // ���������� ���� ������ ������������ ����
-			//temp->Next = p;// ��������� ���� ��������� �� ��������� �������
-
-			//���� �� ��������� �������
+		
 			Container *counter = this->Next;
 			while (counter->Next != this)
 			{
 				counter = counter->Next;
+				//добавление в конец
 
 			}
 
@@ -36,12 +31,9 @@ void Container::In(ifstream &ifst)
 			temp->L = Language::In(ifst);
 			//temp->L->InCommon(ifst);
 			temp->Next = this;
+			
 
-			//Container *p;
-			//p = c.Next->Next; //���������� ��������� �� ����������� �������
-			//c.Next->Next = temp; // ��������� ������� ��������� �� �����
-			//temp->L = In(ifst);
-			//temp->Next = p;
+			
 		}
 	}
 
@@ -88,4 +80,67 @@ void Container::Clear()
 		temp = this->Next;
 	}
 	 this->Next=nullptr;
+};
+
+void Container::Swap(Container *first, Container *second)
+{
+	Language *temp;
+	temp = first->L;
+	first->L = second->L;
+	second->L = temp;
+	
+
+};
+void Container::Sort()
+{
+	//if container contains 1 element, do nothing
+	if (this == this->Next)
+	{
+		return;
+	}
+	Container *current = this;
+	//count element of list
+	/*int listSize =1;
+	while (current->Next != this)
+	{
+		listSize++;
+		current = current->Next;
+	}*/
+
+	bool flag = false;
+	Language *temp;
+	//buble sort
+	do
+	{
+		current = this;
+		//if we didnt swap elements container is sorted
+		flag = false;
+		
+		//for(int i = 0; i < listSize-1;i++)
+		//{
+		//	if (current->L->Compare(*current->Next->L))
+		//	{
+		//		//Swap(current, current->Next);
+		//		temp = current->L;
+		//		current->L = current->Next->L;
+		//		current->Next->L = temp;
+		//		flag = true;
+		//	}
+		//		current = current->Next;
+		//	
+		//} 
+		do 
+		{
+			if (current->L->Compare(*current->Next->L))
+			{
+				Swap(current, current->Next);
+				//temp = current->L;
+				//current->L = current->Next->L;
+				//current->Next->L = temp;
+				flag = true;
+			}
+				current = current->Next;
+					
+		}while(current->Next != this);
+	}while (flag);
 };

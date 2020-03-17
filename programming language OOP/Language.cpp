@@ -49,3 +49,8 @@ int Language::YearsPassed()
 	return (timeinfo->tm_year+1900)-mData;
 };
 
+bool Language::Compare(Language &second)
+{
+	 return YearsPassed() < second.YearsPassed();
+
+}

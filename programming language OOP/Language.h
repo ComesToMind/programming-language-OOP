@@ -9,6 +9,7 @@ public:
 	virtual void InData(ifstream &ifst) = 0; // ввод
 	virtual void Out(ofstream &ofst) = 0;
 	int YearsPassed();
+	bool Compare(Language &second);
 	void InCommon(ifstream &ifst);
 	void OutCommon(ofstream &ofst);
 protected:
