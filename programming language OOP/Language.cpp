@@ -1,12 +1,14 @@
+ï»¿#define _CRT_SECURE_NO_WARNINGS
 #include "Language.h"
 #include "Procedural.h"
 #include "ObjectOriented.h"
+#include <ctime>
+
 #include <string>
 #include "Functional.h"
 Language* Language::In(ifstream &ifst)
 {
-	int k,error1,error2,error3;
-	char error[255];
+	int k;
 	Language * lg;
 	ifst >> k;
 	switch (k)
@@ -23,7 +25,7 @@ Language* Language::In(ifstream &ifst)
 	default:
 		char b;
 		ifst >> b;
-		//÷èòàòåì äî êîíöà ñòðîêè
+		//Ñ‡Ð¸Ñ‚Ð°Ñ‚ÐµÐ¼ Ð´Ð¾ ÐºÐ¾Ð½Ñ†Ð° ÑÑ‚Ñ€Ð¾ÐºÐ¸
 		while (!ifst.eof() && ifst.peek()!='\n')
 		{
 			ifst >> b;
@@ -45,3 +47,15 @@ void Language::OutCommon(ofstream &ofst)
 	ofst << " Develop year: " << mData << ", References:  " << mRef << endl;
 };
 
+int Language::YearsPassed()
+{
+	time_t seconds = time(NULL);
+	tm* timeinfo = localtime(&seconds);
+	return (timeinfo->tm_year+1900)-mData;
+};
+
+bool Language::Compare(Language &second)
+{
+	 return YearsPassed() < second.YearsPassed();
+
+}

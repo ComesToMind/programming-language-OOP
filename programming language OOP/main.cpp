@@ -3,6 +3,7 @@
 #include <string>
 #include "Container.h"
 
+
 using namespace std;
 int main(int argc, char* argv[])
 {
@@ -18,9 +19,16 @@ int main(int argc, char* argv[])
 	ofstream ofst(argv[2]);
 	cout << "Start" << endl;
 	Container c;
+
 	c.In(ifst);
 	ofst << "Filled container. " << endl;
 	c.Out(ofst);
+
+	ofst <<endl<<endl<< "Soreted container. " << endl;
+	c.Sort();
+	c.Out(ofst);
+
+
 	c.Clear();
 	ofst << "Empty container. " << endl;
 	c.Out(ofst);
