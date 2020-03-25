@@ -68,7 +68,7 @@ void Container::Out(ofstream &ofst)
 
 	}
 }
-void Container::OutProc(ofstream & ofst)
+void Container::OutProc(ofstream &ofst)
 {
 	if (this->Next != nullptr)
 	{
