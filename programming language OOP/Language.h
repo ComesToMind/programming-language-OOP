@@ -12,5 +12,7 @@ public:
 	void OutCommon(ofstream &ofst);
 protected:
 	short int mData;
+	int mRef;
+
 	//протекстед Language()???
 };
