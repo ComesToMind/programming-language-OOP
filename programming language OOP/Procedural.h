@@ -8,4 +8,7 @@ public:
 	void Out(ofstream &ofst); // вывод
 	void OutProc(ofstream &ofst);
 	Procedural() {} // создание без инициализации.
+	
+	 int GetmAbstractDT() { return mAbstractDT; }	
+	void SetmAbstractDT(int mAbstractDT) {this->mAbstractDT = mAbstractDT;}
 };
