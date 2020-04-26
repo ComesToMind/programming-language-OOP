@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 
 
 
-	c.OutProc(ofst);
+	c.outProc(ofst);
 	c.Clear();
 	ofst << "Empty container. " << endl;
 	c.Out(ofst);

@@ -1,6 +1,6 @@
 #include "Procedural.h"
 #include <vector>
-void Procedural::InData(vector<int>  & tail)
+void Procedural::inData(vector<int>  & tail)
 {
 	if (tail.size() < 1)
 	{
@@ -18,17 +18,17 @@ void Procedural::InData(vector<int>  & tail)
 		return;
 	}
 	tail.erase(tail.begin()+0);
-	InCommon(tail);
+	inCommon(tail);
 };
 void Procedural::Out(ofstream &ofst)
 {
 	if (mAbstractDT == -1);
 	ofst << "It is Procedural : abstrat data type = " <<  mAbstractDT
 		<< ", ";
-	OutCommon(ofst);
+	outCommon(ofst);
 };
 
-void Procedural::OutProc(ofstream &ofst)
+void Procedural::outProc(ofstream &ofst)
 {
 	Out(ofst);
 };

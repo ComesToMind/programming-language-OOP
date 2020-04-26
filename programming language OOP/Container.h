@@ -7,7 +7,7 @@ class Container
 public:
 	void In(ifstream &ifst); // ввод
 	void Out(ofstream &ofst); // вывод
-	void OutProc(ofstream &ofst);
+	void outProc(ofstream &ofst);
 	void Clear(); // очистка контейнера от фигур
 	void Sort();
 	void Swap(Container *first, Container *second);

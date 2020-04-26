@@ -5,11 +5,11 @@ class Procedural : public Language
 {
 	int mAbstractDT;
 public:
-	void InData(vector<int>  & tail); // ввод
+	void inData(vector<int>  & tail); // ввод
 	void Out(ofstream &ofst); // вывод
-	void OutProc(ofstream &ofst);
+	void outProc(ofstream &ofst);
 	Procedural() {} // создание без инициализации.
 	
-	 int GetmAbstractDT() { return mAbstractDT; }	
-	void SetmAbstractDT(int mAbstractDT) {this->mAbstractDT = mAbstractDT;}
+	 int getmAbstractDT() { return mAbstractDT; }	
+	void setmAbstractDT(int mAbstractDT) {this->mAbstractDT = mAbstractDT;}
 };

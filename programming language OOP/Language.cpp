@@ -9,8 +9,6 @@
 #include "Functional.h"
 Language* Language::In(ifstream &ifst)
 {
-	//read full row
-	//and if it s ok send to InData(vector<int>)
 	Language * lg;
 
 	int k;
@@ -39,7 +37,7 @@ Language* Language::In(ifstream &ifst)
 			break;
 			//сделать окончание ввода до конца
 		}
-	} while (!ifst.eof() && ifst.peek() != '\n');//ifst.peek() != ' ' two space in a row
+	} while (!ifst.eof() && ifst.peek() != '\n');
 	if (flag && !tail.empty())
 	{
 		ifst.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -77,7 +75,7 @@ Language* Language::In(ifstream &ifst)
 	
 };
 
-void Language::InCommon(vector<int> &tail)
+void Language::inCommon(vector<int> &tail)
 {
 	if (tail.size() == 2)
 	{
@@ -91,12 +89,12 @@ void Language::InCommon(vector<int> &tail)
 		return;
 	}
 };
-void Language::OutCommon(ofstream &ofst)
+void Language::outCommon(ofstream &ofst)
 {
 	ofst << " Develop year: " << mData << ", References:  " << mRef;
 };
 
-int Language::YearsPassed()
+int Language::passedYears()
 {
 	time_t seconds = time(NULL);
 	tm* timeinfo = localtime(&seconds);
@@ -106,11 +104,11 @@ int Language::YearsPassed()
 bool Language::Compare(Language *second)
 {
 	if(this!= NULL && second != NULL)
-	 return YearsPassed() < second->YearsPassed();
+	 return passedYears() < second->passedYears();
 	return false;
 
 }
-void Language::OutProc(ofstream &ofst)
+void Language::outProc(ofstream &ofst)
 {
 	//ofst << endl;
 }

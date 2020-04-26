@@ -56,7 +56,7 @@ void Container::Out(ofstream &ofst)
 			else
 			{
 				temp->L->Out(ofst);
-				ofst <<"	" <<temp->L->YearsPassed() <<" years have been passed!"<<endl;
+				ofst <<"	" <<temp->L->passedYears() <<" years have been passed!"<<endl;
 			}
 			temp = temp->Next;
 			i++;
@@ -68,7 +68,7 @@ void Container::Out(ofstream &ofst)
 
 	}
 }
-void Container::OutProc(ofstream &ofst)
+void Container::outProc(ofstream &ofst)
 {
 	if (this->Next != nullptr)
 	{
@@ -85,7 +85,7 @@ void Container::OutProc(ofstream &ofst)
 			}
 			else
 			{
-				temp->L->OutProc(ofst);
+				temp->L->outProc(ofst);
 				ofst << endl;
 			}
 			temp = temp->Next;

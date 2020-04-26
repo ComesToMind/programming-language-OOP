@@ -1,7 +1,7 @@
 #pragma once
 #include "Functional.h"
 #include <vector>
-void Functional::InData(vector<int>  & tail)
+void Functional::inData(vector<int>  & tail)
 {
 	if (tail.size() < 2)
 	{
@@ -28,7 +28,7 @@ void Functional::InData(vector<int>  & tail)
 		return;
 	}
 	tail.erase(tail.begin() + 0, tail.begin() + 2);
-	InCommon(tail);
+	inCommon(tail);
 };
 void Functional::Out(ofstream &ofst)
 {
@@ -42,5 +42,5 @@ void Functional::Out(ofstream &ofst)
 	{
 		ofst << " DYNAMIC, ";
 	}
-	OutCommon(ofst);
+	outCommon(ofst);
 };

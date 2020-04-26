@@ -8,11 +8,11 @@ public:
 		MULTIPLE,
 		INTERFACE
 	};
-	void InData(vector<int>  & tail); // ввод
+	void inData(vector<int>  & tail); // ввод
 	void Out(ofstream &ofst); // вывод
 	ObjectOriented() {};
-	inheritance GetmInher() { return mInher; }
-	void SetmInher(inheritance mInher) { this->mInher = mInher; }
+	inheritance getmInher() { return mInher; }
+	void setmInher(inheritance mInher) { this->mInher = mInher; }
 private:
 	inheritance mInher;
 };

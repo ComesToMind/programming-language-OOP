@@ -27,9 +27,9 @@ namespace UnitTest1
 		TEST_METHOD(YearsPassedM)
 		{
 			ObjectOriented language;
-			language.SetmData(2014);
-			int actual = language.YearsPassed();
-			int expected = 2020 - language.GetmData();
+			language.setmData(2014);
+			int actual = language.passedYears();
+			int expected = 2020 - language.getmData();
 			Assert::AreEqual(expected, actual);
 		}
 		TEST_METHOD(TestCompareM)
@@ -38,8 +38,8 @@ namespace UnitTest1
 
 			Functional language_new;
 			Procedural language_old;
-			language_new.SetmData(2020);
-			language_old.SetmData(2010);
+			language_new.setmData(2020);
+			language_old.setmData(2010);
 			bool actual = language_new.Compare(language_old);
 			bool expected = true;
 			Assert::AreEqual(expected, actual);
@@ -52,14 +52,14 @@ namespace UnitTest1
 			if (fin.is_open())
 			{
 				Procedural actual;
-				actual.InData(fin);
+				actual.inData(fin);
 				Procedural expected;
-				expected.SetmAbstractDT(0);
-				expected.SetmData(2000);
-				expected.SetmRef(20000);
-				Assert::AreEqual(expected.GetmAbstractDT(), actual.GetmAbstractDT());
-				Assert::AreEqual(expected.GetmData(), actual.GetmData());
-				Assert::AreEqual(expected.GetmRef(), actual.GetmRef());
+				expected.setmAbstractDT(0);
+				expected.setmData(2000);
+				expected.setmRef(20000);
+				Assert::AreEqual(expected.getmAbstractDT(), actual.getmAbstractDT());
+				Assert::AreEqual(expected.getmData(), actual.getmData());
+				Assert::AreEqual(expected.getmRef(), actual.getmRef());
 			}
 		}
 
@@ -67,9 +67,9 @@ namespace UnitTest1
 		{
 			ofstream fout("C:\\Users\\Данила\\source\\repos\\programming Versions\\oop3\\programming-language-OOP\\UnitTest1\\Out_Proc_Test_Act.txt");
 			Procedural act;
-			act.SetmAbstractDT(0);
-			act.SetmData(2000);
-			act.SetmRef(20000);
+			act.setmAbstractDT(0);
+			act.setmData(2000);
+			act.setmRef(20000);
 
 			act.Out(fout);
 			fout.close();
@@ -120,7 +120,7 @@ namespace UnitTest1
 			ofstream fout("C:\\Users\\Данила\\source\\repos\\programming Versions\\oop3\\programming-language-OOP\\UnitTest1\\ContainerOutput.txt");
 			Container c;
 			c.In(fin);
-			c.OutProc(fout);
+			c.outProc(fout);
 			fout.close();
 			ifstream fin_exp("C:\\Users\\Данила\\source\\repos\\programming Versions\\oop3\\programming-language-OOP\\UnitTest1\\OnlyProcExp.txt");
 			ifstream fin_act("C:\\Users\\Данила\\source\\repos\\programming Versions\\oop3\\programming-language-OOP\\UnitTest1\\ContainerOutput.txt");

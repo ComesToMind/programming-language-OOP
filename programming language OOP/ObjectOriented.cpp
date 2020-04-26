@@ -1,7 +1,7 @@
 #include "ObjectOriented.h"
 #include <vector>
 
-void ObjectOriented::InData(vector<int>  & tail)
+void ObjectOriented::inData(vector<int>  & tail)
 {
 	if (tail.size() < 1)
 	{
@@ -19,7 +19,7 @@ void ObjectOriented::InData(vector<int>  & tail)
 		return;
 	}
 	tail.erase(tail.begin() + 0);
-	InCommon(tail);
+	inCommon(tail);
 };
 void ObjectOriented::Out(ofstream &ofst)
 {
@@ -34,6 +34,6 @@ void ObjectOriented::Out(ofstream &ofst)
 	else if(mInher==2)
 		ofst << " It is Object - Oriented: inheritance = INTERFACE";
 	ofst << ", ";
-	OutCommon(ofst);
+	outCommon(ofst);
 
 };
