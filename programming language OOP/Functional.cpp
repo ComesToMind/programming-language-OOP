@@ -27,7 +27,7 @@ void Functional::InData(vector<int>  & tail)
 		mIncorrectType = true;
 		return;
 	}
-	tail.erase(tail.begin() + 0, tail.begin() + 1);
+	tail.erase(tail.begin() + 0, tail.begin() + 2);
 	InCommon(tail);
 };
 void Functional::Out(ofstream &ofst)
