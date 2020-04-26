@@ -1,21 +1,25 @@
 #include "ObjectOriented.h"
-void ObjectOriented::InData(ifstream &ifst)
+#include <vector>
+
+void ObjectOriented::InData(vector<int>  & tail)
 {
-	int inh;
-	ifst >> inh;
-	if (inh == 0)
+	if (tail.size() < 1)
 	{
-		mInher = ObjectOriented::SINGLE;
+		mIncorrectType = true;
+		return;
 	}
-	else if (inh == 1)
+	if (tail[0] == 1 || tail[0] == 0 || tail[0]==2)
 	{
-		mInher = ObjectOriented::MULTIPLE;
+		mInher = static_cast<ObjectOriented::inheritance>(tail[0]);
+
 	}
-	else if (inh == 2)
+	else
 	{
-		mInher = ObjectOriented::INTERFACE;
+		mIncorrectType = true;
+		return;
 	}
-	InCommon(ifst);
+	tail.erase(tail.begin() + 0);
+	InCommon(tail);
 };
 void ObjectOriented::Out(ofstream &ofst)
 {
@@ -29,13 +33,7 @@ void ObjectOriented::Out(ofstream &ofst)
 	}
 	else if(mInher==2)
 		ofst << " It is Object - Oriented: inheritance = INTERFACE";
-	else
-	{
-		ofst << "Incorrect type of language!!!" << endl;
-		return;
-	}
-
-	ofst << ",";
+	ofst << ", ";
 	OutCommon(ofst);
 
 };

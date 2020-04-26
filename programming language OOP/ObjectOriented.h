@@ -8,7 +8,7 @@ public:
 		MULTIPLE,
 		INTERFACE
 	};
-	void InData(ifstream &ifst); // ввод
+	void InData(vector<int>  & tail); // ввод
 	void Out(ofstream &ofst); // вывод
 	ObjectOriented() {};
 	inheritance GetmInher() { return mInher; }

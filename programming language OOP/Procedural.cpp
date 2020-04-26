@@ -1,25 +1,28 @@
 #include "Procedural.h"
-void Procedural::InData(ifstream &ifst)
+#include <vector>
+void Procedural::InData(vector<int>  & tail)
 {
-	int inh;
-	ifst >> inh;
-	if (inh == 1 || inh == 0)
+	if (tail.size() < 1)
 	{
-		mAbstractDT = inh;
+		mIncorrectType = true;
+		return;
+	}
+
+	if (tail[0] == 1 ||  tail[0] == 0)
+	{
+		mAbstractDT = tail[0];
 	}
 	else
 	{
-		mAbstractDT = -1;
+		mIncorrectType = true;
+		return;
 	}
-	InCommon(ifst);
+	tail.erase(tail.begin()+0);
+	InCommon(tail);
 };
 void Procedural::Out(ofstream &ofst)
 {
-	if (mAbstractDT == -1)
-	{
-		ofst << "Incorrect type of language!!!" << endl;
-		return;
-	}
+	if (mAbstractDT == -1);
 	ofst << "It is Procedural : abstrat data type = " <<  mAbstractDT
 		<< ", ";
 	OutCommon(ofst);

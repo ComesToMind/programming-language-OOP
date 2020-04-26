@@ -51,12 +51,12 @@ void Container::Out(ofstream &ofst)
 			ofst << i << ": ";
 			if (temp->L == NULL)
 			{
-				ofst << "Incorrect type of language!!!"<<endl;
+				ofst << "Incorrect type of language!!!	"<< endl;
 			}
 			else
 			{
 				temp->L->Out(ofst);
-				ofst << temp->L->YearsPassed() <<" years have been passed!"<<endl;
+				ofst <<"	" <<temp->L->YearsPassed() <<" years have been passed!"<<endl;
 			}
 			temp = temp->Next;
 			i++;
@@ -81,11 +81,12 @@ void Container::OutProc(ofstream &ofst)
 			ofst << i << ": ";
 			if (temp->L == NULL)
 			{
-				ofst << "Incorrect type of language!!!" << endl;
+				ofst  << endl;
 			}
 			else
 			{
 				temp->L->OutProc(ofst);
+				ofst << endl;
 			}
 			temp = temp->Next;
 			i++;
@@ -160,7 +161,7 @@ void Container::Sort()
 		//} 
 		do 
 		{
-			if (current->L->Compare(*current->Next->L))
+			if (current->L->Compare(current->Next->L))
 			{
 				Swap(current, current->Next);
 				//temp = current->L;

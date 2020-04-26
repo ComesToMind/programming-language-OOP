@@ -9,7 +9,7 @@ public:
 		DYNAMIC
 	};
 	Functional() {/**/ }
-	void InData(ifstream &ifst); // ввод
+	void InData(vector<int>  & tail); // ввод
 	void Out(ofstream &ofst); // вывод
 	typification GetmType() { return mType; };
 	void SetmType(typification mType) { this->mType= mType; };
