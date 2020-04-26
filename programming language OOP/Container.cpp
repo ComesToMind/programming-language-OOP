@@ -14,21 +14,16 @@ void Container::In(ifstream &ifst)
 		if ((this == this->Next) && (!ifst.tellg()))
 		{
 			this->L = Language::In(ifst);
-			//this->L->InCommon(ifst); смаркат
+
 		}
 		else
 		{
-			//Container *p;
-			//p = c.Next; // ���������� ��������� �� ��������� �������
-			//c.Next = temp; // ���������� ���� ��������� �� �����������
-			//temp->L = In(ifst); // ���������� ���� ������ ������������ ����
-			//temp->Next = p;// ��������� ���� ��������� �� ��������� �������
 
-			//���� �� ��������� �������
 			Container *counter = this->Next;
 			while (counter->Next != this)
 			{
 				counter = counter->Next;
+				//добавление в конец
 
 			}
 
@@ -37,11 +32,8 @@ void Container::In(ifstream &ifst)
 			//temp->L->InCommon(ifst);
 			temp->Next = this;
 
-			//Container *p;
-			//p = c.Next->Next; //���������� ��������� �� ����������� �������
-			//c.Next->Next = temp; // ��������� ������� ��������� �� �����
-			//temp->L = In(ifst);
-			//temp->Next = p;
+
+
 		}
 	}
 
@@ -64,6 +56,7 @@ void Container::Out(ofstream &ofst)
 			else
 			{
 				temp->L->Out(ofst);
+				ofst << endl;
 			}
 			temp = temp->Next;
 			i++;

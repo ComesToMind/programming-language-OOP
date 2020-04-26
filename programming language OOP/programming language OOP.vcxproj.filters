@@ -30,7 +30,7 @@
     <ClCompile Include="Container.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Functional.cpp">
+    <ClCompile Include="Container_MM.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,9 +45,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Container.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Functional.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
