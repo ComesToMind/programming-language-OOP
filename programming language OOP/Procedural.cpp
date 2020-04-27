@@ -32,3 +32,21 @@ void Procedural::outProc(ofstream &ofst)
 {
 	Out(ofst);
 };
+void Procedural::MultiMethod(Language *other, ofstream &ofst)
+{
+	other->MmProc(ofst);
+};
+void Procedural::MmProc(ofstream &ofst)
+{
+	ofst << "Procedural and Procedural." << endl;
+};
+void Procedural::MmOop(ofstream &ofst)
+{
+	ofst << "Procedural and OOP." << endl;
+
+};
+void Procedural::MmFunc(ofstream &ofst)
+{
+	ofst << "Procedural and Functional." << endl;
+
+};

@@ -56,7 +56,7 @@ Language* Language::In(ifstream &ifst)
 			return NULL;
 		}
 		tail.erase(tail.begin()+0);
-		lg->InData(tail);
+		lg->inData(tail);
 
 		if (lg->mIncorrectType)
 			return NULL;

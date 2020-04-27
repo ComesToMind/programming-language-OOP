@@ -7,11 +7,16 @@ class Language
 
 public:
 	static Language * In(ifstream &ifst);
-	virtual void InData(vector<int>  & tail) = 0; // ввод
+	virtual void inData(vector<int>  & tail) = 0; // ввод
 	virtual void Out(ofstream &ofst) = 0;
 	virtual void outProc(ofstream &ofst);
 	int passedYears();
 	bool Compare(Language *second);
+
+	virtual void MultiMethod(Language *other, ofstream &ofst) = 0;
+	virtual void MmProc(ofstream &ofst) = 0;
+	virtual void MmOop(ofstream &ofst) = 0;
+	virtual void MmFunc(ofstream &ofst)= 0;
 
 	void inCommon(vector<int> &tail);
 	void outCommon(ofstream &ofst);

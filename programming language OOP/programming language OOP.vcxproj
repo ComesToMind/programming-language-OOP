@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Container.cpp" />
+    <ClCompile Include="Container_MM.cpp" />
     <ClCompile Include="Functional.cpp" />
     <ClCompile Include="Language.cpp" />
     <ClCompile Include="main.cpp" />

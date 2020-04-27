@@ -32,6 +32,8 @@ int main(int argc, char* argv[])
 
 
 	c.outProc(ofst);
+
+	c.MultiMethod(ofst);
 	c.Clear();
 	ofst << "Empty container. " << endl;
 	c.Out(ofst);

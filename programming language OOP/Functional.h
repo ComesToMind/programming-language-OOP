@@ -11,6 +11,12 @@ public:
 	Functional() {/**/ }
 	void inData(vector<int>  & tail); // ввод
 	void Out(ofstream &ofst); // вывод
+
+	 void MultiMethod(Language *other, ofstream &ofst);
+	 void MmProc(ofstream &ofst);
+	 void MmOop(ofstream &ofst);
+	 void MmFunc(ofstream &ofst);
+
 	typification getmType() { return mType; };
 	void setmType(typification mType) { this->mType= mType; };
 	unsigned short int getmLazyCalculations() { return mLazyCalculations; }
